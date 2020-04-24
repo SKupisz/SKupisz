@@ -4,6 +4,8 @@ import Typing from "react-typing-animation";
 import {Link} from "react-router-dom";
 import {Saturn} from "../../img/saturn.jpg";
 
+import Navbar from "../subcomponents/navbar.jsx";
+
 export default class Welcome extends React.Component{
     constructor(props){
         super(props);
@@ -26,12 +28,7 @@ export default class Welcome extends React.Component{
               </div>}
 
             <Particles className = {this.site == "welcome" ? "description-container-particles description-particles-animation": "description-container-particles"}/>
-            <nav className={this.site == "welcome" ? "main-navbar animated-navbar": "main-navbar"}>
-          <Link to = "/main"><button className="nav-item">Main site</button></Link>
-          <Link to = "/portfolio"><button className="nav-item">Portfolio</button></Link>
-          <Link to = "/blog"><button className="nav-item">Blog</button></Link>
-          <Link to = "/contact"><button className="nav-item">Contact me</button></Link>
-              </nav>
+            <Navbar site = {this.site}/>
         </div>
         <div className={this.site == "welcome" ? "description-continue description-continue-animation": "description-continue"}></div>
       </div>);

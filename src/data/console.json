@@ -1,0 +1,25 @@
+{
+    "helpCommands": [
+        ["show --projects", "Shows the projects I built"],
+        ["show --skills", "Shows my abilities in programming"],
+        ["clear", "Clears the console"],
+        ["chfz -b -m -l","Changes console's font size to bigger (-b), medium (-m) or lower (-l)"],
+        ["exit","Shows exit options"]
+    ],
+    "projects":
+    [
+        ["SGK-news","2019","now","https://sgk-news.pl","Founder and CEO"],
+        ["Hackclub","2019","now","https://hackclub.pl","Co-leader and emcee"],
+        ["Alice envisions the future","2020","2020","https://www.microsoft.com/en-eg/alice-envisions-the-future","Tech mentor"],
+        ["Hackweek","2020","2020","https://hackweek.pl","Co-leader"]
+    ],
+    "skills": 
+    [
+        "Web front-end: ","HTML","CSS","SCSS","Javascript","ReactJS",
+        "Web back-end: ","PHP","Laravel","Node.js",
+        "Databases: ", "SQL","MySQL",
+        "Mobile apps design: ","Xamarin",
+        "Other languages: ","C++","Python","C# (pure, xamarin)"
+    ]
+    
+}
