@@ -1,0 +1,99 @@
+.blog-mainHeader{
+    width: calc(90% - 20px);
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Oswald",sans-serif;
+    font-size: 2.9em;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+}
+.blogs-container{
+    width: calc(95% - 16px);
+    padding: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    a{
+        text-decoration: none;
+    }
+    .blog-anchor{
+        width: calc(50% - 10px);
+        padding: 20px 5px 30px 5px;
+        text-align: center;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 15px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.4s;
+        backdrop-filter: blur(0.8);
+        text-shadow: 2px 2px 5px #000;
+        .blog-header{
+            width: calc(100% - 12px);
+            padding: 6px;
+            padding-top: 2px;
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.3em;
+            font-family: "Oswald",sans-serif;
+            margin-bottom: 60px;
+        }
+        .blog-shortDesc{
+            width: calc(80% - 20px);
+            padding: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: brightness(200%);
+            text-shadow: 2px 2px 10px #000;
+        }
+    }
+    .blog-anchor:hover{
+        transform: scale(0.985);
+    }
+    .blog1{
+        background-image: url("../img/blogsBackgrounds/matrix.jpg");
+        background-size: cover;
+    }
+}
+
+.blog-header{
+    font-size: 2.9em;
+    font-family: "Oswald",sans-serif;
+    width: calc(100% - 40px);
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+}
+.first-paragraph,.normal-paragraph,.last-paragraph{
+    font-size: 1.2em;
+    text-indent: 2em;
+    font-family: "Oswald",sans-serif;
+    line-height: 2em;
+    width: calc(95% - 20px);
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255,255,255,.7);
+}
+
+.image-container{
+    width: calc(50% - 20px);
+    padding: 10px;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    .image{
+        width: inherit;
+        height: auto;
+    }
+}
