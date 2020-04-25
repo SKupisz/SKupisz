@@ -4,6 +4,7 @@
         ["show --skills", "Shows my abilities in programming"],
         ["clear", "Clears the console"],
         ["chfz -b -m -l","Changes console's font size to bigger (-b), medium (-m) or lower (-l)"],
+        ["chcc {color} --reset","Changes console text's color to the hex code or the RGB given or resets is with --reset. To know more colors, type chcc -list"],
         ["exit","Shows exit options"]
     ],
     "projects":

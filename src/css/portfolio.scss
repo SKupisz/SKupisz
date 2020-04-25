@@ -50,17 +50,20 @@ body{
     border-radius: 5px;
     height: calc(70vh - 60px);
     transition: all 0.4s;
+    color: green;
 
     animation-name: consoleIntroAnimation;
     animation-duration: 1s;
     animation-delay: 1.4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    .command-link{
+        color: inherit;
+    }
 }
 .console-output-container{
     height: calc(60vh - 40px);
     padding: 5px;
-    color: green;
     font-family: "Lato",sans-serif;
     width: 100%;
     overflow-y: scroll;
@@ -78,16 +81,24 @@ body{
         text-indent: 1em;
     }
     a{
-        color: green;
+        color: inherit;
     }
 }
+.console-output-scroll::-webkit-scrollbar{
+    width: 9px !important;
+    background: none !important;
+}
+.console-output-scroll::-webkit-scrollbar-thumb{
+    border-radius: 5px !important;
+    background: green !important;
+}
 .console-output-container::-webkit-scrollbar{
-    width: 9px;
-    background: none;
+    width: 9px !important;
+    background: none !important;
 }
 .console-output-container::-webkit-scrollbar-thumb{
-    border-radius: 5px;
-    background: green;
+    border-radius: 5px !important;
+    background: green !important;
 }
 
 .bigger-font-size{
@@ -105,7 +116,7 @@ body{
         font-family: "Lato",sans-serif;
     }
     .enter-sign{
-        color: green;
+        color: inherit;
         font-size: 1.9em;
         text-align: right;
     }
@@ -117,7 +128,49 @@ body{
         border: none;
         border-radius: 5px;
         background: rgba(255,255,255,.1);
-        color: green;
+        color: inherit;
         font-size: 1.3em;
+    }
+}
+@media screen and (max-width: 630px){
+    .console-content{
+        width: calc(95% - 20px);
+    }
+    .console-input-container{
+
+        .console-input{
+            font-size: 1.1em;
+            height: calc(inherit * 0.7);
+        }
+    }
+
+    @keyframes consoleIntroAnimation{
+        100%{
+            margin-left: 2%;
+        }
+    }
+}
+@media screen and (max-width: 472px){
+    .portfolio-header{
+        font-size: 1.5em;
+    }
+    .bigger-font-size{
+        font-size: 1.1em;
+    }
+    .lower-font-size{
+        font-size: 0.7em;
+    }
+    .console-output-container{
+        font-size: 0.9em;
+    }
+}
+@media screen and (max-width: 370px){
+    .portfolio-header{
+        font-size: 1.3em;
+    }
+    @keyframes consoleIntroAnimation{
+        100%{
+            margin-left: 1%;
+        }
     }
 }

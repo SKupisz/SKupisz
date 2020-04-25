@@ -1,4 +1,7 @@
 import React from "react";
+import ScrollToBottom from "react-scroll-to-bottom";
+import validateColor from 'validate-color';
+import {css} from "glamor";
 import {Link} from "react-router-dom";
 
 export default class Portfolio extends React.Component{
@@ -7,8 +10,10 @@ export default class Portfolio extends React.Component{
 
         this.inputRef = React.createRef();
         this.outputRef = React.createRef();
+        this.consoleContentRef = React.createRef();
 
         this.executeTheCommand = this.executeTheCommand.bind(this);
+        this.changeTheColor = this.changeTheColor.bind(this);
 
         this.base = require("../../data/console.json");
         this.projects = this.base["projects"];
@@ -31,16 +36,16 @@ export default class Portfolio extends React.Component{
         else if(command == "clear"){
             response = "";
             flag = 1;
-            this.setState({consoleOutput: [<div class = "command-container">> Console cleared</div>]}, () => {});
+            this.setState({consoleOutput: [<div className = "command-container">> Console cleared</div>]}, () => {});
         }
         else if(command == "exit"){
             flag = 5;
             let helping = this.state.consoleOutput;
             let toAdd = [<div className = "command">>> exit</div>,
             <div className="command-container">> Where would you like to go to?</div>,
-            <div className="command-container">> <Link to = "/main">Main site</Link></div>,
-            <div className="command-container">> <Link to = "/blog">Blog site</Link></div>,
-            <div className="command-container">> <Link to = "/contact">Contact site</Link></div>];
+            <div className="command-container">> <Link to = "/main" className = "command-link">Main site</Link></div>,
+            <div className="command-container">> <Link to = "/blog" className = "command-link">Blog site</Link></div>,
+            <div className="command-container">> <Link to = "/contact" className = "command-link">Contact site</Link></div>];
             for(let i = 0 ; i < toAdd.length; i++){
                 helping.push(toAdd[i]);
             }
@@ -118,6 +123,24 @@ export default class Portfolio extends React.Component{
                     }
                 }
             }
+            else if(command[0] == "chcc"){
+                if(command.length < 2){
+                    response = "Command unknown";
+                }
+                else{
+                    if(command[1] == "--reset"){
+                        this.consoleContentRef.current.classList = ["console-content"];
+                        response = "Color reseted";
+                    }
+                    else if(validateColor(command[1]) != null){
+                        let res = this.changeTheColor(command[1]);  
+                        response = res;
+                    }
+                    else{
+                        response = "Command unknown";
+                    }
+                }
+            }
             else{
                 response = "Command unknown";
             }
@@ -137,17 +160,25 @@ export default class Portfolio extends React.Component{
             }
         }
 
-
+        
         this.inputRef.current.value = "";
+    }
+
+    changeTheColor(colorToAdd){
+        let newColor = css({
+            color: colorToAdd+" !important"
+        });
+        this.consoleContentRef.current.classList.add(newColor);
+        return ["Color changed to "+colorToAdd];
     }
 
     render(){
         return(<div className="portfolio-content">
             <header className="portfolio-header">Welcome to the story of my career...</header>
-            <section className="console-content">
-                <div className="console-output-container" ref = {this.outputRef}>
-                    {this.state.consoleOutput}
-                </div>
+            <section className="console-content" ref = {this.consoleContentRef}>
+            <ScrollToBottom className="console-output-container" scrollViewClassName = "console-output-scroll" ref = {this.outputRef}>
+                {this.state.consoleOutput}
+            </ScrollToBottom>
                 <div className="console-input-container">
                     <span className="enter-sign">></span>
                     <input type="text" name="" id="" className="console-input" ref = {this.inputRef} onKeyPress = {event => {if(event.key == "Enter"){
