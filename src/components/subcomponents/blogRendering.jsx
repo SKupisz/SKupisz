@@ -1,4 +1,6 @@
 import React from "react";
+
+import Navbar from "../subcomponents/navbar.jsx";
 import ReturnTheImage from "./returnTheImage.jsx";
 
 export default class BlogRendering extends React.Component{
@@ -25,13 +27,15 @@ export default class BlogRendering extends React.Component{
                 imageConstructor.changeTheName(imageToLoad);
                 this.items.push(<div className = "image-container">
                     <img src = {imageConstructor.returnTheImage()} className = "image"/>
+                    <footer className="image-footer">{tempItem["title"]}</footer>
                 </div>);
             }
             counter++;
         }
     }
     render(){
-        return(<div className="blog-menu">
+        return(<div className="single-blog-container">
+            <Navbar/>
             <header className="blog-header">{this.base["title"]}</header>
             <section className="article-container">{this.items}</section>
         </div>);
