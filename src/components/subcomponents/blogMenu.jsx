@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import Navbar from "../subcomponents/navbar.jsx";
+
 export default class BlogMenu extends React.Component{
     constructor(props){
         super(props);
@@ -9,6 +11,7 @@ export default class BlogMenu extends React.Component{
     }
     render(){
         return(<div className="blog-menu">
+            <Navbar/>
             <header className="blog-mainHeader">Blog</header>
             <section className="blogs-container">
                 {this.blogList["blogsData"].map((data,i) => 
