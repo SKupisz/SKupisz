@@ -15,6 +15,7 @@ export default class Contact extends React.Component{
             <div className="contact-container">
                 <Particles className = "contact-particles" />
                 <div className="main-container-content">
+                    <Navbar site = "contact"/>
                     <header className="main-header">Contact me</header>
                     <div className="contact-box">
                         <div className="contact-item">Phone: {this.list.phone}</div>
@@ -23,7 +24,6 @@ export default class Contact extends React.Component{
                         <div className="contact-item">Twitter: <a href = {this.list.linkToTweeter}>granarax</a></div>
                         <div className="contact-item">LinkedIn: <a href = {this.list.linkToLinkedIn}>Simon G. Kupisz</a></div>
                     </div>
-                    <Navbar site = "contact"/>
                     
                 </div>
 

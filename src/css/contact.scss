@@ -9,6 +9,9 @@ body{
 }
 
 .contact-container{
+    .main-navbar{
+        margin-top: 0px !important;
+    }
     .main-container-content{
 
         width: 100%;
@@ -55,6 +58,14 @@ body{
 
     }
 }
+@media screen and (max-width: 607px){
+    .contact-container{
+        .main-navbar{
+            position: initial;
+        }
+    }
+}
+
 @media screen and (max-width: 570px){
     .contact-container{
         .main-container-content{
