@@ -4,6 +4,9 @@ import phpAndMySQL from "../../img/blog/phpAndMySQL.jpg";
 import practicalSQLCourse from "../../img/blog/practicalSQLCourse.jpg";
 import basicsOfCryptography from "../../img/blog/basicsOfCryptography.jpg";
 
+import reactLogo from "../../img/blog/reactLogo.png";
+import dotNetCoreLogo from "../../img/blog/dotNetCoreLogo.png";
+
 export default class ReturnTheImage{
     constructor(name){
         this.name = name;
@@ -21,6 +24,12 @@ export default class ReturnTheImage{
                 break;
             case "basicsOfCryptography":
                 return basicsOfCryptography;
+                break;
+            case "reactLogo":
+                return reactLogo;
+                break;
+            case "dotNetCoreLogo":
+                return dotNetCoreLogo;
                 break;
             default:
                 break;

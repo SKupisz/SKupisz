@@ -1,6 +1,7 @@
 {
-    "quantity": 1,
+    "quantity": 2,
     "blogsData": [
-        ["My favourite programming books", "In today's world we can learn programming from many sources: youtube tutorials, online courses, stack overflow etc. However, programming books are also a popular source of IT knowledge. Today, I will show you...","my-programming-books"]
+        ["My favourite programming books", "In today's world we can learn programming from many sources: youtube tutorials, online courses, stack overflow etc. However, programming books are also a popular source of IT knowledge. Today, I will show you...","my-programming-books"],
+        ["React - worth to learn or not?", "For a longer time, I have been programming many websites with React.js. At the beginning of learning this framework, I was not sure if that was something I thoroughly needed. However, today, after getting experience in this technology, I don't regret...","react-worth-to-learn-our-not"]
     ]
 }

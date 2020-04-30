@@ -12,6 +12,7 @@ export default class Blog extends React.Component{
         return(<div className="blog-content">
             <Route exact path = "/blog" component = {BlogMenu}/>
             <Route exact path = "/blog/my-programming-books" component = {() => <BlogRendering blogNumber = "1" />}/>
+            <Route exact path = "/blog/react-worth-to-learn-our-not" component = {() => <BlogRendering blogNumber = "2" />}/>
         </div>);
     }
 }
