@@ -29,16 +29,16 @@ export default class Portfolio extends React.Component{
     executeTheCommand(){
         let command = this.inputRef.current.value, commandForPaste = ">> "+this.inputRef.current.value;
         let response = "", flag = 0;
-        if(command == "help"){
+        if(command === "help"){
             response = "help initialized";
             flag = 2;
         }
-        else if(command == "clear"){
+        else if(command === "clear"){
             response = "";
             flag = 1;
             this.setState({consoleOutput: [<div className = "command-container">> Console cleared</div>]}, () => {});
         }
-        else if(command == "exit"){
+        else if(command === "exit"){
             flag = 5;
             let helping = this.state.consoleOutput;
             let toAdd = [<div className = "command">>> exit</div>,
@@ -53,13 +53,13 @@ export default class Portfolio extends React.Component{
         }
         else{
             command = command.split(" ");
-            if(command[0] == "chfz"){
+            if(command[0] === "chfz"){
                 if(command.length < 2){
                     response = "Command unknown";
                 }
                 else{
-                    if(command[1] == "-b"){
-                        if(this.outputRef.current.classList.contains("bigger-font-size") == true){
+                    if(command[1] === "-b"){
+                        if(this.outputRef.current.classList.contains("bigger-font-size") === true){
                             response = "Font size already changed"; 
                         }
                         else{
@@ -69,13 +69,13 @@ export default class Portfolio extends React.Component{
                         }
    
                     }
-                    else if(command[1] == "-m"){
+                    else if(command[1] === "-m"){
                         this.outputRef.current.classList.remove("bigger-font-size");
                         this.outputRef.current.classList.remove("lower-font-size");
                         response = "Font size changed";    
                     }
-                    else if(command[1] == "-l"){
-                        if(this.outputRef.current.classList.contains("lower-font-size") == true){
+                    else if(command[1] === "-l"){
+                        if(this.outputRef.current.classList.contains("lower-font-size") === true){
                             response = "Font size already changed"; 
                         }
                         else{
@@ -90,12 +90,12 @@ export default class Portfolio extends React.Component{
                     }
                 }
             }
-            else if(command[0] == "show"){
+            else if(command[0] === "show"){
                 if(command.length < 2){
                     response = "Missing flag. Type help to know more";
                 }
                 else{
-                    if(command[1] == "--projects"){
+                    if(command[1] === "--projects"){
                         flag = 4;
                         let projectsHelping = this.state.consoleOutput;
                         projectsHelping.push(<div className = "command">{commandForPaste}</div>);
@@ -109,11 +109,11 @@ export default class Portfolio extends React.Component{
                         </div>));
                         this.setState({consoleOutput: projectsHelping}, () => {});
                     }
-                    else if(command[1] == "--skills"){
+                    else if(command[1] === "--skills"){
                         flag = 4;
                         let projectsHelping = this.state.consoleOutput;
                         projectsHelping.push(<div className = "command">{commandForPaste}</div>);
-                        this.skills.map(data=> projectsHelping.push(<div className = {data.indexOf(":") == -1 ? "skill-container": "skill-container section-introducing-container"}>
+                        this.skills.map(data=> projectsHelping.push(<div className = {data.indexOf(":") === -1 ? "skill-container": "skill-container section-introducing-container"}>
                             {data}
                         </div>));
                         this.setState({consoleOutput: projectsHelping}, () => {});
@@ -123,16 +123,16 @@ export default class Portfolio extends React.Component{
                     }
                 }
             }
-            else if(command[0] == "chcc"){
+            else if(command[0] === "chcc"){
                 if(command.length < 2){
                     response = "Command unknown";
                 }
                 else{
-                    if(command[1] == "--reset"){
+                    if(command[1] === "--reset"){
                         this.consoleContentRef.current.classList = ["console-content"];
                         response = "Color reseted";
                     }
-                    else if(validateColor(command[1]) != null){
+                    else if(validateColor(command[1]) !== null){
                         let res = this.changeTheColor(command[1]);  
                         response = res;
                     }
@@ -146,16 +146,16 @@ export default class Portfolio extends React.Component{
             }
             
         }
-        if(flag != 1 && flag != 4 && flag != 5){
+        if(flag !== 1 && flag !== 4 && flag !== 5){
             let helping = this.state.consoleOutput;
             helping.push(<div className = "command">{commandForPaste}</div>);
             this.setState({consoleOutput: helping}, () => {});
-            if(flag == 0 || flag == 2){
+            if(flag === 0 || flag === 2){
                 helping.push(<div className = "command-container">{response}</div>);
                 this.setState({consoleOutput: helping}, () => {});           
             }
-            if(flag == 2){
-                this.base["helpCommands"].map(info => {helping.push(<div className = "command-container">{info[0]+" : "+info[1]}</div>);});
+            if(flag === 2){
+                this.base["helpCommands"].map(info => helping.push(<div className = "command-container">{info[0]+" : "+info[1]}</div>));
                 this.setState({consoleOutput: helping}, () => {});
             }
         }
@@ -181,7 +181,8 @@ export default class Portfolio extends React.Component{
             </ScrollToBottom>
                 <div className="console-input-container">
                     <span className="enter-sign">></span>
-                    <input type="text" name="" id="" className="console-input" ref = {this.inputRef} onKeyPress = {event => {if(event.key == "Enter"){
+                    <input type="text" name="" id="" className="console-input" ref = {this.inputRef} onKeyPress = {event => {
+                    if(event.key === "Enter"){
                         this.executeTheCommand()
                     }}}/>
                 </div>

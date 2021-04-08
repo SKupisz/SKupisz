@@ -1,5 +1,3 @@
-import React from "react";
-
 import phpAndMySQL from "../../img/blog/phpAndMySQL.jpg";
 import practicalSQLCourse from "../../img/blog/practicalSQLCourse.jpg";
 import basicsOfCryptography from "../../img/blog/basicsOfCryptography.jpg";
@@ -18,19 +16,14 @@ export default class ReturnTheImage{
         switch(this.name){
             case "phpAndMySQL":
                 return phpAndMySQL;
-                break;
             case "practicalSQLCourse":
                 return practicalSQLCourse;
-                break;
             case "basicsOfCryptography":
                 return basicsOfCryptography;
-                break;
             case "reactLogo":
                 return reactLogo;
-                break;
             case "dotNetCoreLogo":
                 return dotNetCoreLogo;
-                break;
             default:
                 break;
         }

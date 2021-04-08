@@ -17,16 +17,16 @@ export default class BlogRendering extends React.Component{
     getTheItems(){
         let counter = 1;
         let imageConstructor = new ReturnTheImage("");
-        while(this.base.hasOwnProperty("item"+counter) != false){
+        while(this.base.hasOwnProperty("item"+counter) !== false){
             let tempItem = this.base["item"+counter];
-            if(tempItem["type"] == "p"){
+            if(tempItem["type"] === "p"){
                 this.items.push(<p className = {tempItem["class"]}>{tempItem["content"]}</p>);
             }
-            else if(tempItem["type"] == "image"){
+            else if(tempItem["type"] === "image"){
                 let imageToLoad = tempItem["src"];
                 imageConstructor.changeTheName(imageToLoad);
                 this.items.push(<div className = "image-container">
-                    <img src = {imageConstructor.returnTheImage()} className = "image"/>
+                    <img src = {imageConstructor.returnTheImage()} alt = "" className = "image"/>
                     <footer className="image-footer">{tempItem["title"]}</footer>
                 </div>);
             }

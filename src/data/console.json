@@ -16,11 +16,11 @@
     ],
     "skills": 
     [
-        "Web front-end: ","HTML","CSS","SCSS","Javascript","ReactJS",
-        "Web back-end: ","PHP","Laravel","Node.js",
-        "Databases: ", "SQL","MySQL",
-        "Mobile apps design: ","Xamarin",
-        "Other languages: ","C++","Python","C# (pure, xamarin)"
+        "Web front-end: ","HTML (advanced)","CSS (advanced)","SCSS (mid-advanced)","Javascript (mid-advanced)","ReactJS (mid-advanced)",
+        "Web back-end: ","PHP (advanced)","Laravel (mid)","Node.js (mid)",
+        "Databases: ", "SQL (advanced)","MySQL (advanced)",
+        "Mobile apps design: ","Xamarin (learning)",
+        "Other languages: ","C++ (advanced)","Python (learning)","C# (pure, xamarin)"
     ]
     
 }
